@@ -40,6 +40,12 @@ public class ProdutoController : ControllerBase
     {
         return Ok(await _produtoService.GetByTitulo(titulo));
     }
+    
+    [HttpGet("preco/{min}/{max}")]
+    public async Task<ActionResult> GetByPriceRange(decimal min, decimal max)
+    {
+        return Ok(await _produtoService.GetByPriceRange(min, max));
+    }
 
     [HttpPost]
     public async Task<ActionResult> Create([FromBody] Produto produto)

@@ -12,7 +12,7 @@ public interface IProdutoService
     
     //Task<IEnumerable<Produto>> GetByTitleOrConsole(string texto);
     
-    //Task<IEnumerable<Produto>> GetByPriceRange(decimal min, decimal max);
+    Task<IEnumerable<Produto>> GetByPriceRange(decimal min, decimal max);
     
     Task<Produto?> Create(Produto produto);
     

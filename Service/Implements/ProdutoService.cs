@@ -42,6 +42,24 @@ public class ProdutoService : IProdutoService
             .Where(t => t.Titulo.Contains(titulo)).ToListAsync();
         return produto;
     }
+    
+    /*
+    public async Task<IEnumerable<Produto>> GetByTitleOrConsole(string texto)
+    {
+        var produto = await _context.Produtos
+            .Include(p => p.Categoria)
+            .Where(t => t.Titulo.Contains(texto)).ToListAsync();
+        return produto;
+    }
+    */
+    
+    public async Task<IEnumerable<Produto>> GetByPriceRange(decimal min, decimal max)
+    {
+        var produto = await _context.Produtos
+            .Include(p => p.Categoria)
+            .Where(p => p.Preco >= min && p.Preco <= max).ToListAsync();
+        return produto;
+    }
 
     public async Task<Produto?> Create(Produto produto)
     {
