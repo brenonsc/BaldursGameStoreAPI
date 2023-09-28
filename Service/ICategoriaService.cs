@@ -8,7 +8,7 @@ public interface ICategoriaService
     
     Task<Categoria?> GetById(long id);
     
-    Task<IEnumerable<Categoria>> GetByTipo(string descricao);
+    Task<IEnumerable<Categoria>> GetByTipo(string tipo);
     
     Task<Categoria?> Create(Categoria categoria);
     

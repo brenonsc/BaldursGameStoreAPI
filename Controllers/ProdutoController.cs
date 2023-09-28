@@ -57,7 +57,7 @@ public class ProdutoController : ControllerBase
         return CreatedAtAction(nameof(GetById), new {id = produto.Id}, produto);
     }
 
-    [HttpPut ("{id}")]
+    [HttpPut]
     public async Task<ActionResult> Update([FromBody] Produto produto)
     {
         if (produto.Id <= 0)
