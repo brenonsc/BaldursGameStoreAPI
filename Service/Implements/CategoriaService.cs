@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BaldursGame.Service.Implements;
 
-public class CategoriaService
+public class CategoriaService : ICategoriaService
 {
     private readonly AppDbContext _context;
     
@@ -35,11 +35,11 @@ public class CategoriaService
         }
     }
 
-    public async Task<IEnumerable<Categoria>> GetByDescricao(string descricao)
+    public async Task<IEnumerable<Categoria>> GetByTipo(string tipo)
     {
         var categoria = await _context.Categorias
             .Include(c => c.Produto)
-            .Where(c => c.Tipo.Contains(descricao)).ToListAsync();
+            .Where(c => c.Tipo.Contains(tipo)).ToListAsync();
         return categoria;
     }
 
