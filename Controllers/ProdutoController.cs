@@ -47,10 +47,10 @@ public class ProdutoController : ControllerBase
         return Ok(await _produtoService.GetByPriceRange(min, max));
     }
     
-    [HttpGet("buscar/{texto}")]
-    public async Task<ActionResult> GetByTitleOrConsole(string texto)
+    [HttpGet("titulo/{titulo}/ouconsole/{console}")]
+    public async Task<ActionResult> GetByTitleOrConsole(string titulo, string console)
     {
-        return Ok(await _produtoService.GetByTitleOrConsole(texto));
+        return Ok(await _produtoService.GetByTitleOrConsole(titulo, console));
     }
 
     [HttpPost]

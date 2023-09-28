@@ -43,11 +43,11 @@ public class ProdutoService : IProdutoService
         return produto;
     }
 
-    public async Task<IEnumerable<Produto>> GetByTitleOrConsole(string texto)
+    public async Task<IEnumerable<Produto>> GetByTitleOrConsole(string titulo, string console)
     {
         var produto = await _context.Produtos
             .Include(p => p.Categoria)
-            .Where(t => t.Titulo.Contains(texto) || t.Console.Contains(texto)).ToListAsync();
+            .Where(t => t.Titulo.Contains(titulo) || t.Console.Contains(console)).ToListAsync();
         return produto;
     }
     
