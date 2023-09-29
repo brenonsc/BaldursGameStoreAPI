@@ -23,10 +23,12 @@ public class ProdutoValidator : AbstractValidator<Produto>
             .MaximumLength(100);
 
         RuleFor(p => p.DataLancamento)
-            .NotEmpty();
-        
+            .NotNull();
+
         RuleFor(p => p.Preco)
-            .NotEmpty();
+            .NotNull()
+            .GreaterThan(0)
+            .PrecisionScale(10, 2, false);
 
         RuleFor(p => p.Imagem)
             .NotEmpty()
