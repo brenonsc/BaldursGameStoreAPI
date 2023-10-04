@@ -1,11 +1,16 @@
 ﻿
+using System.Text;
 using BaldursGame.Data;
 using BaldursGame.Model;
+using BaldursGame.Security;
+using BaldursGame.Security.Implements;
 using BaldursGame.Service;
 using BaldursGame.Service.Implements;
 using BaldursGame.Validator;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BaldursGame;
 
@@ -20,6 +25,7 @@ public class Program
             .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
             });
         
         //Conexão com o banco de dados
@@ -29,10 +35,32 @@ public class Program
         //Registrar validação das entidades
         builder.Services.AddTransient<IValidator<Produto>, ProdutoValidator>();
         builder.Services.AddTransient<IValidator<Categoria>, CategoriaValidator>();
+        builder.Services.AddTransient<IValidator<User>, UserValidator>();
         
         //Registrar as classes de serviço
         builder.Services.AddScoped<IProdutoService, ProdutoService>();
         builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+        builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<IAuthService, AuthService>();
+        
+        //Registrar as classes de segurança
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
+        {
+            var key = Encoding.UTF8.GetBytes(Settings.Secret);
+            options.SaveToken = true;
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key)
+            };
+        });
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -67,6 +95,9 @@ public class Program
         }
 
         app.UseCors("MyPolicy");
+        
+        app.UseAuthentication();
+
         app.UseAuthorization();
         
         app.MapControllers();
