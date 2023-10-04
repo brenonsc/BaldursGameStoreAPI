@@ -8,7 +8,7 @@ public interface IUserService
     
     Task<User?> GetById(long id);
     
-    Task<User?> GetByEmail(string email);
+    Task<User?> GetByEmail(string email); 
     
     Task<User?> Create(User usuario);
     

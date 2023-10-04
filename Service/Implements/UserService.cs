@@ -13,7 +13,7 @@ public class UserService : IUserService
         _context = context;
     }
     
-    public async Task<IEnumerable<User>> GetAll()
+    public async Task<IEnumerable<User>> GetAll() 
     {
         return await _context.Users
             .ToListAsync();
