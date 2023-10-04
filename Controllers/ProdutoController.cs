@@ -1,10 +1,12 @@
 using BaldursGame.Model;
 using BaldursGame.Service;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BaldursGame.Controllers;
 
+[Authorize]
 [Route("~/api/produtos")]
 [ApiController]
 public class ProdutoController : ControllerBase
