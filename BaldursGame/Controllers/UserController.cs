@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaldursGame.Controllers;
 
-[Route("~/usuarios")]
+[Route("~/api/usuarios")]
 [ApiController]
 public class UserController : ControllerBase
 {

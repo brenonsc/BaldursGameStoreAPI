@@ -1,4 +1,4 @@
-# BaldursGameAPI :space_invader::video_game:
+# BaldursGameStoreAPI :space_invader::video_game:
 
 Esta é a documentação para a API de uma loja de games que permite a manipulação de dados de produtos e categorias relacionadas a jogos. Esta API foi construída seguindo as melhores práticas do ASP.NET e oferece funcionalidades completas para gerenciar produtos e categorias.
 
@@ -38,6 +38,53 @@ A API também oferece funcionalidades completas para o recurso "Categoria", incl
 
 <br>
 
+## Recurso Usuário
+
+A API oferece um conjunto completo de operações CRUD para o recurso "Usuário", incluindo os seguintes métodos:
+
+1. **GET `/api/usuarios/all`**: Retorna a lista de todos os usuários cadastrados.
+2. **GET `/api/usuarios/{id}`**: Retorna detalhes de um usuário específico com base no ID.
+3. **POST `/api/usuarios/cadastrar`**: Cria um novo usuário.
+4. **POST `/api/usuarios/logar`**: Permite que um usuário faça login na plataforma. Este método utiliza JWT (JSON Web Tokens) para autenticação e gera um token válido por 1 hora, que deve ser incluído nas solicitações subsequentes para autenticação do usuário.
+5. **PUT `/api/usuarios/atualizar`**: Atualiza os detalhes de um usuário existente com base no ID e outros dados passados no corpo da solicitação.
+
+<br>
+
+### Exemplo de Autenticação com JWT
+
+Para usar o método de login e obter um token JWT válido, faça uma solicitação POST para `/api/usuarios/logar` com as credenciais do usuário no corpo da solicitação. O servidor irá gerar um token JWT que deve ser incluído no cabeçalho das solicitações subsequentes como Bearer Token para autenticar o usuário. O token é válido por 1 hora, após o qual será necessário fazer login novamente.
+
+Exemplo de cabeçalho de autenticação:
+
+```
+Authorization: Bearer <seu-token-jwt>
+```
+
+<br>
+
+## Segurança de Acesso aos Recursos
+
+A fim de garantir a segurança dos recursos e dados da API, foram implementadas regras de acesso que restringem determinadas operações com base na autenticação do usuário. Abaixo, estão as restrições de acesso para os recursos "Produto" e "Categoria":
+
+<br>
+
+### Recurso Produto e Categoria
+
+- Todos os métodos CRUD relacionados ao recurso "Produto" requerem autenticação com um token JWT válido no cabeçalho da solicitação. Isso garante que apenas usuários autenticados tenham acesso a essas operações.
+
+<br>
+
+### Recurso Usuário
+
+Para o recurso "Usuário", a seguinte política de segurança foi implementada:
+
+- **Cadastro de Usuário**: O método de cadastro de usuário (`POST /api/usuarios/cadastrar`) pode ser acessado de forma anônima, ou seja, sem a necessidade de autenticação. Isso permite que novos usuários se registrem na plataforma.
+- **Login de Usuário**: O método de login (`POST /api/usuarios/logar`) também pode ser acessado de forma anônima. No entanto, ao fazer login com sucesso, um token JWT válido é gerado e fornecido ao usuário. Este token deve ser usado para autenticar todas as outras operações subsequentes que exigem autenticação.
+
+Lembrando que a segurança é fundamental para proteger os dados e garantir a integridade da plataforma. Certifique-se de incluir o token JWT válido no cabeçalho das solicitações sempre que necessário.
+
+<br>
+
 ### Relacionamento entre Categoria e Produto
 
 Existe um relacionamento do tipo OneToMany entre os recursos "Categoria" e "Produto". Cada categoria pode ter vários produtos associados a ela. Este relacionamento é habilitado no recurso "Produto".
@@ -56,4 +103,4 @@ A API oferece dois endpoints adicionais:
 
 ## Testando a API
 
-Recomenda-se o uso da ferramenta Insomnia para testar a API. Certifique-se de testar todas as operações CRUD para os recursos "Produto" e "Categoria", bem como os endpoints de busca por intervalo de preço e título/console.
+Recomenda-se o uso da ferramenta [Insomnia](https://insomnia.rest/) ou [Postman](https://www.postman.com/) para testar a API. Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
