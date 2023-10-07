@@ -23,5 +23,9 @@ public class UserValidator : AbstractValidator<User>
 
         RuleFor(u => u.Foto)
             .MaximumLength(5000);
+
+        RuleFor(u => u.DataNascimento)
+            .NotEmpty()
+            .LessThanOrEqualTo(u => DateTime.Today.AddYears(-18));
     }
 }

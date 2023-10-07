@@ -29,23 +29,4 @@ public class AppDbContext : DbContext
     public DbSet<Categoria> Categorias { get; set; } = null!;
     
     public DbSet<User> Users { get; set; } = null!;
-    
-    public class DateOnlyConverter : ValueConverter<DateOnly, DateTime>
-    {
-        public DateOnlyConverter()
-            : base(dateOnly =>
-                    dateOnly.ToDateTime(TimeOnly.MinValue),
-                dateTime => DateOnly.FromDateTime(dateTime))
-        { }
-    }
-
-    //Conversão do tipo DateOnly para o BD
-    protected override void ConfigureConventions(ModelConfigurationBuilder builder)
-    {
-        builder.Properties<DateOnly>()
-            .HaveConversion<DateOnlyConverter>()
-            .HaveColumnType("date");
-
-        base.ConfigureConventions(builder);
-    }
 }

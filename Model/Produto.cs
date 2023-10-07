@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BaldursGame.Util;
+using Newtonsoft.Json;
 
 namespace BaldursGame.Model;
 
@@ -23,7 +25,8 @@ public class Produto
     public string Console { get; set; } = string.Empty;
     
     [Column(TypeName = "date")]
-    public DateOnly DataLancamento { get; set; }
+    [JsonConverter(typeof(DateOnlyJsonConverter))]
+    public DateTime DataLancamento { get; set; }
     
     [Column(TypeName = "decimal(10,2)")]
     public decimal Preco { get; set; }

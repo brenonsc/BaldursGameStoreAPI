@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BaldursGame.Util;
+using Newtonsoft.Json;
 
 namespace BaldursGame.Model;
 
@@ -24,4 +26,8 @@ public class User
     [Column(TypeName = "varchar")]
     [StringLength(5000)]
     public string? Foto { get; set; } = string.Empty;
+    
+    [Column(TypeName = "date")]
+    [JsonConverter(typeof(DateOnlyJsonConverter))]
+    public DateTime DataNascimento { get; set; }
 }
