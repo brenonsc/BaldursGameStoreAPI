@@ -16,9 +16,12 @@ A API oferece um conjunto completo de operações CRUD para o recurso "Produto",
 
 1. **GET `/api/produtos`**: Retorna a lista de todos os produtos disponíveis.
 2. **GET `/api/produtos/{id}`**: Retorna detalhes de um produto específico com base no ID.
-3. **POST `/api/produtos`**: Cria um novo produto.
-4. **PUT `/api/produtos`**: Atualiza os detalhes de um produto existente com base no ID.
-5. **DELETE `/api/produtos/{id}`**: Exclui um produto com base no ID.
+3. **GET `/api/produtos/titulo/{titulo}`**: Retorna todos os produtos dentro de um intervalo de preço especificado.
+4. **GET `/api/produtos/preco/{min}/{max}`**: Retorna todos os produtos dentro de um intervalo de preço especificado.
+5. **GET `/api/produtos/titulo/{titulo}/ouconsole/{console}`**: Permite a busca de jogos por título ou console. Os parâmetros de consulta podem ser usados para especificar os critérios de busca.
+6. **POST `/api/produtos/{categoriaId}`**: Cria um novo produto.
+7. **PUT `/api/produtos/{id}/categoria/{categoriaId}`**: Atualiza os detalhes de um produto existente com base no ID.
+8. **DELETE `/api/produtos/{id}`**: Exclui um produto com base no ID.
 
 <br>
 
@@ -28,9 +31,10 @@ A API também oferece funcionalidades completas para o recurso "Categoria", incl
 
 1. **GET `/api/categorias`**: Retorna a lista de todas as categorias disponíveis, juntamente com a coleção de produtos pertencentes a mesma.
 2. **GET `/api/categorias/{id}`**: Retorna detalhes de uma categoria específica com base no ID.
-3. **POST `/api/categorias/`**: Cria uma nova categoria.
-4. **PUT `/api/categorias/`**: Atualiza os detalhes de uma categoria existente com base no ID.
-5. **DELETE `/api/categorias/{id}`**: Exclui uma categoria com base no ID.
+3. **GET `/api/categorias/{id}`**: Retorna detalhes de uma categoria específica com base no tipo informado.
+4. **POST `/api/categorias/`**: Cria uma nova categoria.
+5. **PUT `/api/categorias/{id}`**: Atualiza os detalhes de uma categoria existente com base no ID.
+6. **DELETE `/api/categorias/{id}`**: Exclui uma categoria com base no ID.
 
 <br>
 
@@ -81,16 +85,6 @@ Lembrando que a segurança é fundamental para proteger os dados e garantir a in
 
 <br>
 
-### Relacionamento entre Categoria e Produto
+## Licença
 
-Existe um relacionamento do tipo OneToMany entre os recursos "Categoria" e "Produto". Cada categoria pode ter vários produtos associados a ela. Este relacionamento é habilitado no recurso "Produto".
-
-<br>
-
-### Busca por Intervalo de Preço e Título/Console :video_game:
-
-A API oferece dois endpoints adicionais:
-
-1. **GET `/api/produtos/preco/{min}/{max}`**: Retorna todos os produtos dentro de um intervalo de preço especificado.
-
-2. **GET `/api/produtos/titulo/{titulo}/ouconsole/{console}`**: Permite a busca de jogos por título ou console. Os parâmetros de consulta podem ser usados para especificar os critérios de busca.
+Este software está licenciado sob a [Licença MIT](https://github.com/brenonsc/BaldursGameStoreAPI/blob/main/LICENSE).

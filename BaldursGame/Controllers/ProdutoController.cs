@@ -97,7 +97,7 @@ public class ProdutoController : ControllerBase
     /// <response code="201">Jogo criado com sucesso</response>
     /// <response code="401">Não autorizado</response>
     /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
-    [HttpPost("/categoria/{categoriaId}")]
+    [HttpPost("{categoriaId}")]
     public async Task<ActionResult> Create(int categoriaId, [FromBody] Produto produto)
     {
         if (categoriaId <= 0)
