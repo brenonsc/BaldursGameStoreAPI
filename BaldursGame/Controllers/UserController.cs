@@ -22,6 +22,12 @@ public class UserController : ControllerBase
         _authService = authService;
     }
     
+    /// <summary>
+    /// Retorna todos os usuários cadastrados no sistema
+    /// </summary>
+    /// <returns>Todos os usuários cadastrados</returns>
+    /// <response code="201">Usuário cadastrado com sucesso</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [Authorize]
     [HttpGet("all")]
     public async Task<ActionResult> GetAll()
@@ -29,6 +35,12 @@ public class UserController : ControllerBase
         return Ok(await _userService.GetAll());
     }
     
+    /// <summary>
+    /// Buscar um usuário pelo ID
+    /// </summary>
+    /// <returns>Atributos do usuário</returns>
+    /// <response code="201">Usuário cadastrado com sucesso</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [Authorize]
     [HttpGet("{id}")]
     public async Task<ActionResult> GetById(long id)
@@ -41,6 +53,12 @@ public class UserController : ControllerBase
         return Ok(user);
     }
 
+    /// <summary>
+    /// Cria um novo usuário no sistema
+    /// </summary>
+    /// <returns>Atributos do usuário</returns>
+    /// <response code="201">Usuário cadastrado com sucesso</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [AllowAnonymous]
     [HttpPost("cadastrar")]
     public async Task<ActionResult> Create([FromBody] User user)
@@ -58,6 +76,12 @@ public class UserController : ControllerBase
         return CreatedAtAction(nameof(GetById), new {id = user.Id}, user);
     }
 
+    /// <summary>
+    /// Autentica um usuário no sistema
+    /// </summary>
+    /// <returns>Retorna atributos do usuário e Token</returns>
+    /// <response code="200">Usuário logado com sucesso</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [AllowAnonymous]
     [HttpPost("logar")]
     public async Task<ActionResult> Autenticar([FromBody] UserLogin userLogin)
@@ -70,10 +94,18 @@ public class UserController : ControllerBase
         return Ok(resposta);
     }
 
+    /// <summary>
+    /// Atualiza um usuário no sistema
+    /// </summary>
+    /// <returns>Atributos do usuário</returns>
+    /// <response code="201">Usuário cadastrado com sucesso</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [Authorize]
-    [HttpPut("atualizar")]
-    public async Task<ActionResult> Update([FromBody] User user)
+    [HttpPut("atualizar/{id}")]
+    public async Task<ActionResult> Update(int id, [FromBody] User user)
     {
+        user.Id = id;
+        
         if (user.Id <= 0)
             return BadRequest("Id do usuário inválido");
         

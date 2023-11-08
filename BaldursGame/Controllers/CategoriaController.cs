@@ -20,12 +20,26 @@ public class CategoriaController : ControllerBase
         _categoriaValidator = categoriaValidator;
     }
     
+    /// <summary>
+    /// Retorna todas as categorias cadastradas no sistema
+    /// </summary>
+    /// <returns>Retorna todas as categorias cadastradas no sistema</returns>
+    /// <response code="200">Sucesso</response>
+    /// <response code="401">Não autorizado</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [HttpGet]
     public async Task<ActionResult> GetAll()
     {
         return Ok(await _categoriaService.GetAll());
     }
     
+    /// <summary>
+    /// Retorna a categoria com o ID informado
+    /// </summary>
+    /// <returns>Retorna atributos da categoria</returns>
+    /// <response code="200">Sucesso</response>
+    /// <response code="401">Não autorizado</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [HttpGet("{id}")]
     public async Task<ActionResult> GetById(long id)
     {
@@ -37,12 +51,26 @@ public class CategoriaController : ControllerBase
         return Ok(Categoria);
     }
     
+    /// <summary>
+    /// Retorna as categorias que contém o tipo informado
+    /// </summary>
+    /// <returns>Retorna atributos da categoria informada</returns>
+    /// <response code="200">Sucesso</response>
+    /// <response code="401">Não autorizado</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [HttpGet("tipo/{tipo}")]
     public async Task<ActionResult> GetByTipo(string tipo)
     {
         return Ok(await _categoriaService.GetByTipo(tipo));
     }
 
+    /// <summary>
+    /// Cadastra uma nova categoria
+    /// </summary>
+    /// <returns>Retorna atributos da categoria informada</returns>
+    /// <response code="201">Localidade criada com sucesso</response>
+    /// <response code="401">Não autorizado</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [HttpPost]
     public async Task<ActionResult> Create([FromBody] Categoria categoria)
     {
@@ -55,25 +83,51 @@ public class CategoriaController : ControllerBase
         return CreatedAtAction(nameof(GetById), new {id = categoria.Id}, categoria);
     }
 
-    [HttpPut]
-    public async Task<ActionResult> Update([FromBody] Categoria categoria)
+    /// <summary>
+    /// Atualiza uma categoria existente
+    /// </summary>
+    /// <returns>Retorna atributos da categoria informada</returns>
+    /// <response code="200">Localidade atualizada com sucesso</response>
+    /// <response code="401">Não autorizado</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+    [HttpPut("{id}")]
+    public async Task<ActionResult> Update(int id, [FromBody] Categoria categoria)
     {
-        if (categoria.Id <= 0)
-            return BadRequest("Id da categoria inválido");
-        
+        if (id <= 0)
+            return BadRequest("ID da categoria inválido");
+
+        if (categoria == null)
+            return BadRequest("Dados de categoria inválidos");
+
+        categoria.Id = id;
+
+        // Verifique se a categoria com o ID especificado existe no banco de dados.
+        var existingCategoria = await _categoriaService.GetById(id);
+
+        if (existingCategoria == null)
+            return NotFound("Categoria não encontrada");
+
         var validationResult = await _categoriaValidator.ValidateAsync(categoria);
-        
+
         if (!validationResult.IsValid)
             return BadRequest(validationResult.Errors);
-        
+
+        // Realize a atualização da categoria com os dados recebidos no corpo da requisição
         var categoriaUpdate = await _categoriaService.Update(categoria);
-        
+
         if (categoriaUpdate == null)
-            return NotFound("Produto não encontrado");
-        
+            return NotFound("Não foi possível atualizar a categoria");
+
         return Ok(categoriaUpdate);
     }
     
+    /// <summary>
+    /// Deleta uma categoria existente pelo ID
+    /// </summary>
+    /// <returns>Retorna NoContent</returns>
+    /// <response code="204">Localidade deletada com sucesso</response>
+    /// <response code="401">Não autorizado</response>
+    /// <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
     [HttpDelete("{id}")]
     public async Task<ActionResult> Delete(long id)
     {

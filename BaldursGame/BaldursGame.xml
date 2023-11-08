@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BaldursGame</name>
+    </assembly>
+    <members>
+        <member name="M:BaldursGame.Controllers.CategoriaController.GetAll">
+            <summary>
+            Retorna todas as categorias cadastradas no sistema
+            </summary>
+            <returns>Retorna todas as categorias cadastradas no sistema</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.CategoriaController.GetById(System.Int64)">
+            <summary>
+            Retorna a categoria com o ID informado
+            </summary>
+            <returns>Retorna atributos da categoria</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.CategoriaController.GetByTipo(System.String)">
+            <summary>
+            Retorna as categorias que contém o tipo informado
+            </summary>
+            <returns>Retorna atributos da categoria informada</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.CategoriaController.Create(BaldursGame.Model.Categoria)">
+            <summary>
+            Cadastra uma nova categoria
+            </summary>
+            <returns>Retorna atributos da categoria informada</returns>
+            <response code="201">Localidade criada com sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.CategoriaController.Update(System.Int32,BaldursGame.Model.Categoria)">
+            <summary>
+            Atualiza uma categoria existente
+            </summary>
+            <returns>Retorna atributos da categoria informada</returns>
+            <response code="200">Localidade atualizada com sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.CategoriaController.Delete(System.Int64)">
+            <summary>
+            Deleta uma categoria existente pelo ID
+            </summary>
+            <returns>Retorna NoContent</returns>
+            <response code="204">Localidade deletada com sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.GetAll">
+            <summary>
+            Retorna todos os jogos cadastrados no sistema
+            </summary>
+            <returns>Todos os jogos cadastrados no sistema</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.GetById(System.Int64)">
+            <summary>
+            Retorna o jogo com o ID informado
+            </summary>
+            <returns>Atributos do jogo</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.GetByTitulo(System.String)">
+            <summary>
+            Retorna os jogos que contém o título informado
+            </summary>
+            <returns>Atributos do jogo</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.GetByPriceRange(System.Decimal,System.Decimal)">
+            <summary>
+            Retorna os jogos que estão no intervalo de preço informado
+            </summary>
+            <returns>Atributos dos jogos</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.GetByTitleOrConsole(System.String,System.String)">
+            <summary>
+            Retorna os jogos que contém o título ou console informado
+            </summary>
+            <returns>Atributos dos jogos</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.Create(System.Int32,BaldursGame.Model.Produto)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <returns>Atributos do jogo cadastrado</returns>
+            <response code="201">Jogo criado com sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.Update(System.Int32,System.Int32,BaldursGame.Model.Produto)">
+            <summary>
+            Atualiza um jogo existente
+            </summary>
+            <returns>Atributos do jogo informado</returns>
+            <response code="200">Jogo atualizado com sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.ProdutoController.Delete(System.Int64)">
+            <summary>
+            Deleta um jogo existente pelo ID
+            </summary>
+            <returns>NoContent</returns>
+            <response code="204">Jogo deletado com sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.UserController.GetAll">
+            <summary>
+            Retorna todos os usuários cadastrados no sistema
+            </summary>
+            <returns>Todos os usuários cadastrados</returns>
+            <response code="201">Usuário cadastrado com sucesso</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.UserController.GetById(System.Int64)">
+            <summary>
+            Buscar um usuário pelo ID
+            </summary>
+            <returns>Atributos do usuário</returns>
+            <response code="201">Usuário cadastrado com sucesso</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.UserController.Create(BaldursGame.Model.User)">
+            <summary>
+            Cria um novo usuário no sistema
+            </summary>
+            <returns>Atributos do usuário</returns>
+            <response code="201">Usuário cadastrado com sucesso</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.UserController.Autenticar(BaldursGame.Model.UserLogin)">
+            <summary>
+            Autentica um usuário no sistema
+            </summary>
+            <returns>Retorna atributos do usuário e Token</returns>
+            <response code="200">Usuário logado com sucesso</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="M:BaldursGame.Controllers.UserController.Update(System.Int32,BaldursGame.Model.User)">
+            <summary>
+            Atualiza um usuário no sistema
+            </summary>
+            <returns>Atributos do usuário</returns>
+            <response code="201">Usuário cadastrado com sucesso</response>
+            <response code="500">Erro provavelmente causado pelo Render, tente novamente, por favor</response>
+        </member>
+        <member name="P:BaldursGame.Model.Categoria.Tipo">
+            <summary>
+            Tipo da categoria
+            </summary>
+            <example>Categoria</example>
+        </member>
+        <member name="P:BaldursGame.Model.Produto.Titulo">
+            <summary>
+            Título do jogo
+            </summary>
+            <example>Título do jogo</example>
+        </member>
+        <member name="P:BaldursGame.Model.Produto.Descricao">
+            <summary>
+            Descrição do jogo
+            </summary>
+            <example>Descrição do jogo</example>
+        </member>
+        <member name="P:BaldursGame.Model.Produto.Console">
+            <summary>
+            Console do jogo
+            </summary>
+            <example>PlayStation 5</example>
+        </member>
+        <member name="P:BaldursGame.Model.Produto.DataLancamento">
+            <summary>
+            Data de lançamento do jogo
+            </summary>
+            <example>2000-01-01</example>
+        </member>
+        <member name="P:BaldursGame.Model.Produto.Preco">
+            <summary>
+            Preço do jogo
+            </summary>
+            <example>299.90</example>
+        </member>
+        <member name="P:BaldursGame.Model.Produto.Imagem">
+            <summary>
+            Link para imagem do jogo
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:BaldursGame.Model.User.Nome">
+            <summary>
+            Nome do usuário
+            </summary>
+            <example>João Teste</example>
+        </member>
+        <member name="P:BaldursGame.Model.User.Email">
+            <summary>
+            E-mail do usuário
+            </summary>
+            <example>example@email.com</example>
+        </member>
+        <member name="P:BaldursGame.Model.User.Senha">
+            <summary>
+            Senha do usuário
+            </summary>
+            <example>Y0ur$tr0ngP@ssw0rd</example>
+        </member>
+        <member name="P:BaldursGame.Model.User.Foto">
+            <summary>
+            Link para foto do usuário
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:BaldursGame.Model.User.DataNascimento">
+            <summary>
+            Data de nascimento do usuário
+            </summary>
+            <example>2000-01-01</example>
+        </member>
+        <member name="P:BaldursGame.Model.UserLogin.Email">
+            <summary>
+            E-mail do usuário
+            </summary>
+            <example>example@email.com</example>
+        </member>
+        <member name="P:BaldursGame.Model.UserLogin.Senha">
+            <summary>
+            Senha do usuário
+            </summary>
+            <example>Y0ur$tr0ngP@ssw0rd</example>
+        </member>
+    </members>
+</doc>

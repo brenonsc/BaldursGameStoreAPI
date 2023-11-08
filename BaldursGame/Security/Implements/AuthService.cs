@@ -50,7 +50,7 @@ public class AuthService : IAuthService
         userLogin.Id = buscaUsuario.Id;
         userLogin.Nome = buscaUsuario.Nome;
         userLogin.Foto = buscaUsuario.Foto is null ? fotoDefault : buscaUsuario.Foto;
-        userLogin.Token = "Bearer " + tokenHandler.WriteToken(token).ToString();
+        userLogin.Token = tokenHandler.WriteToken(token).ToString();
         userLogin.Senha = "";
         
         return userLogin;

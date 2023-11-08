@@ -4,17 +4,13 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
 
 <br>
 
-## Configuração
+## Testando a API :man_scientist:
 
-Antes de começar a usar a API, certifique-se de seguir os passos de configuração necessários:
-
-1. **Projeto ASP.NET**: O projeto foi criado seguindo as melhores práticas do ASP.NET.
-2. **String de Conexão**: Configure a string de conexão com o banco de dados no arquivo `settings.json`.
-3. **Classe de Contexto**: A classe de contexto para interagir com o banco de dados está localizada na camada de dados.
+Para testar a API, acesse a documentação no [Swagger](https://baldursgamestore.onrender.com). Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
 
 <br>
 
-## Recurso Produto
+## Recurso Produto :space_invader:
 
 A API oferece um conjunto completo de operações CRUD para o recurso "Produto", incluindo os seguintes métodos:
 
@@ -26,7 +22,7 @@ A API oferece um conjunto completo de operações CRUD para o recurso "Produto",
 
 <br>
 
-## Recurso Categoria
+## Recurso Categoria :abc:
 
 A API também oferece funcionalidades completas para o recurso "Categoria", incluindo um conjunto de métodos CRUD semelhantes aos do recurso "Produto":
 
@@ -38,7 +34,7 @@ A API também oferece funcionalidades completas para o recurso "Categoria", incl
 
 <br>
 
-## Recurso Usuário
+## Recurso Usuário :bust_in_silhouette:
 
 A API oferece um conjunto completo de operações CRUD para o recurso "Usuário", incluindo os seguintes métodos:
 
@@ -50,7 +46,7 @@ A API oferece um conjunto completo de operações CRUD para o recurso "Usuário"
 
 <br>
 
-### Exemplo de Autenticação com JWT
+### Exemplo de Autenticação com JWT :key:
 
 Para usar o método de login e obter um token JWT válido, faça uma solicitação POST para `/api/usuarios/logar` com as credenciais do usuário no corpo da solicitação. O servidor irá gerar um token JWT que deve ser incluído no cabeçalho das solicitações subsequentes como Bearer Token para autenticar o usuário. O token é válido por 1 hora, após o qual será necessário fazer login novamente.
 
@@ -62,7 +58,7 @@ Authorization: Bearer <seu-token-jwt>
 
 <br>
 
-## Segurança de Acesso aos Recursos
+## Segurança de Acesso aos Recursos :lock:
 
 A fim de garantir a segurança dos recursos e dados da API, foram implementadas regras de acesso que restringem determinadas operações com base na autenticação do usuário. Abaixo, estão as restrições de acesso para os recursos "Produto" e "Categoria":
 
@@ -91,16 +87,10 @@ Existe um relacionamento do tipo OneToMany entre os recursos "Categoria" e "Prod
 
 <br>
 
-### Busca por Intervalo de Preço e Título/Console
+### Busca por Intervalo de Preço e Título/Console :video_game:
 
 A API oferece dois endpoints adicionais:
 
 1. **GET `/api/produtos/preco/{min}/{max}`**: Retorna todos os produtos dentro de um intervalo de preço especificado.
 
 2. **GET `/api/produtos/titulo/{titulo}/ouconsole/{console}`**: Permite a busca de jogos por título ou console. Os parâmetros de consulta podem ser usados para especificar os critérios de busca.
-
-<br>
-
-## Testando a API
-
-Recomenda-se o uso da ferramenta [Insomnia](https://insomnia.rest/) ou [Postman](https://www.postman.com/) para testar a API. Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
