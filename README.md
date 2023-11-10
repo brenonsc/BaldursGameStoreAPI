@@ -34,7 +34,7 @@ A API está documentada no [Swagger](https://swagger.io/). Certifique-se de test
 
 <br>
 
-### Autenticação com JWT :key:
+## Autenticação com JWT :key:
 
 Para usar o método de login e obter um token JWT válido, faça uma solicitação POST para `/api/usuarios/logar` com as credenciais do usuário no corpo da solicitação. O servidor irá gerar um token JWT que deve ser incluído no cabeçalho das solicitações subsequentes como Bearer Token para autenticar o usuário. O token é válido por 1 hora, após o qual será necessário fazer login novamente.
 
