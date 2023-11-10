@@ -8,9 +8,30 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
 
 <br>
 
+## Tecnologias e Ferramentas utilizadas 💻
+<div>
+    <img align='center' height='50' width='70' title='.NET Core' alt='dotnet' src='https://github.com/devicons/devicon/blob/master/icons/dotnetcore/dotnetcore-original.svg' />
+    <img align='center' height='50' width='50' title='Nuget' alt='nuget' src='https://github.com/devicons/devicon/blob/master/icons/nuget/nuget-original.svg' />
+    <img align='center' height='62' width='72' title='Swagger' alt='swagger' src='https://github.com/bush1D3v/tsbank_api/assets/133554156/6739401f-d03b-47f8-b01f-88da2a9075d1' />
+    <img align='center' height='53' width='55' title='JsonWebToken' alt='jsonwebtoken' src='https://github.com/bush1D3v/solid_rest_api/assets/133554156/d23ffb9d-aedc-4d68-9209-7268d7f41ce6' /> 
+    <img align='center' height='55' width='70' title='PostgreSQL' alt='postgresql' src='https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg' />
+    <img align='center' height='54' width='68' title='Microsoft SQL Server' alt='mssql' src='https://camo.githubusercontent.com/2636f807a9f2c751d54b817ae081a8a348a6d4eeec7c344c36bdb5f5717e1bcb/68747470733a2f2f63646e2e73696d706c6569636f6e732e6f72672f6d6963726f736f667473716c7365727665722f434332393237' />
+    <img align='center' height='49' width='49' title='Jetbrains Rider' alt='rider' src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/1200px-JetBrains_Rider_Icon.svg.png' /> &nbsp;&nbsp;
+    <img align='center' height='53' width='53' title='Postman' alt='postman' src='https://seeklogo.com/images/P/postman-logo-0087CA0D15-seeklogo.com.png' /> &nbsp;
+    <img align='center' height='66' width='66' title='Docker' alt='docker' src='https://github.com/devicons/devicon/blob/master/icons/docker/docker-original.svg' />
+</div>
+
+<br>
+
 ## Testando a API :man_scientist:
 
-Para testar a API, acesse a documentação no [Swagger](https://baldursgamestore.onrender.com). Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
+### Na nuvem ☁️
+Para testar a API, basta acessar o link do [deploy](https://baldursgamestore.onrender.com) e começar a utilizar.
+
+### Localmente
+
+
+Em ambos os casos, a API está documentada no [Swagger](https://swagger.io/). Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
 
 <br>
 
