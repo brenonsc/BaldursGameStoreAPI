@@ -26,11 +26,11 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
 ## Testando a API :man_scientist:
 
 ### Na nuvem ☁️
-Para testar a API, basta acessar o link do [deploy](https://baldursgamestore.onrender.com) e começar a utilizar.
+Para testar a API, basta acessar o link do <a href="https://baldursgamestore.onrender.com" target="_blank">deploy</a> e começar a utilizar.
 
 <br>
 
-A API está documentada no [Swagger](https://swagger.io/). Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
+A API está documentada no <a href="https://swagger.io/" target="_blank">Swagger</a>. Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
 
 <br>
 
