@@ -1,5 +1,5 @@
 # BaldursGameStoreAPI :space_invader::video_game:
-![License](https://badgen.net/badge/license/MIT/purple?icon=)
+![License](https://badgen.net/badge/License/MIT/purple?icon=)
 ![.NET](https://badgen.net/badge/.NET/v7.0/blue?icon=)
 ![NuGet](https://badgen.net/badge/icon/Packages/green?icon=nuget&label)
 ![Docker](https://badgen.net/badge/icon/Available?icon=docker&label)
