@@ -1,4 +1,8 @@
 # BaldursGameStoreAPI :space_invader::video_game:
+![License](https://badgen.net/badge/license/MIT/purple?icon=)
+![.NET](https://badgen.net/badge/.NET/v7.0/blue?icon=)
+![NuGet](https://badgen.net/badge/icon/Packages/green?icon=nuget&label)
+![Docker](https://badgen.net/badge/icon/Available?icon=docker&label)
 
 Esta é a documentação para a API de uma loja de games que permite a manipulação de dados de produtos e categorias relacionadas a jogos. Esta API foi construída seguindo as melhores práticas do ASP.NET e oferece funcionalidades completas para gerenciar produtos e categorias.
 
