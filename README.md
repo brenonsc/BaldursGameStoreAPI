@@ -49,7 +49,7 @@ docker compose up
 
 #### 3. Configure o appsettings.json
 
-Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettings.json` do projeto (localizado dentro da pasta BaldursGame) que está com a configuração "PROD", devendo ser alterada para "DEV" para ser usado localmente, como representado abaixo:
+Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettings.json` do projeto (localizado dentro da pasta BaldursGame). A mesma está com o valor "PROD", que deve ser alterado para "DEV" para ser usado localmente, como representado abaixo:
 
 ```json
 "Environment": {
