@@ -27,28 +27,27 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
 ## Testando a API :man_scientist:
 
 ### Na nuvem ☁️
-Para testar a API, basta acessar o link do <a target="_blank" href="https://baldursgamestore.onrender.com">deploy</a> e começar a utilizar.
+Para fazer os testes de forma online e sem necessidade de configurações, basta acessar o link do <a target="_blank" href="https://baldursgamestore.onrender.com">deploy</a> e começar a utilizar.
 
 <br>
 
 ### Localmente (utilizando Docker) :whale:
+Para configurar a aplicação para executar em ambiente local, siga o passo a passo abaixo:
 
-Certo, se você já tem o Dockerfile criado e apenas precisa seguir com os passos de configuração e execução, aqui estão as instruções revisadas:
-
-### 1. Clone o Projeto
+#### 1. Clone o Projeto
 
 ```bash
 git clone https://github.com/brenonsc/BaldursGameStoreAPI.git
 cd BaldursGameStoreAPI
 ```
 
-### 2. Inicialize o contêiner do Docker
+#### 2. Inicialize o contêiner do Docker
 
 ```bash
 docker compose up
 ```
 
-### 3. Configure o appsettings.json
+#### 3. Configure o appsettings.json
 
 Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettings.json` do projeto (localizado dentro da pasta BaldursGame) que está com a configuração "PROD", devendo ser alterada para "DEV" para ser usado localmente, como representado abaixo:
 
@@ -58,7 +57,7 @@ Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettin
 },
 ```
 
-### 4. Execute a aplicação
+#### 4. Execute a aplicação
 
 Volte ao Terminal ou CMD e execute os seguintes comandos:
 
