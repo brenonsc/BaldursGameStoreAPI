@@ -29,6 +29,46 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
 ### Na nuvem ☁️
 Para testar a API, basta acessar o link do <a target="_blank" href="https://baldursgamestore.onrender.com">deploy</a> e começar a utilizar.
 
+
+
+### Localmente (utilizando Docker) :whale:
+
+Certo, se você já tem o Dockerfile criado e apenas precisa seguir com os passos de configuração e execução, aqui estão as instruções revisadas:
+
+### 1. Clone o Projeto
+
+```bash
+git clone https://github.com/brenonsc/BaldursGameStoreAPI.git
+cd BaldursGame
+```
+
+### 2. Inicialize o contêiner do Docker
+
+```bash
+docker compose up
+```
+
+### 3. Configure o appsettings.json
+
+Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettings.json do projeto que está com a configuração "PROD", e deve ser alterada para "DEV", como representado abaixo:
+
+```json
+"Environment": {
+    "Start": "DEV"
+ },
+```
+
+### 4. Execute a aplicação
+
+Volte ao Terminal ou CMD e execute os seguintes comandos:
+
+```bash
+cd BaldursGame
+dotnet run
+```
+
+Outra opção é usar uma IDE .NET de sua preferência, como Visual Studio ou Jetbrains Rider. A aplicação estará disponível em [localhost://5000](http://localhost:5000/swagger/index.html), no seu navegador. 
+
 <br>
 
 A API está documentada no <a target="_blank" href="https://swagger.io/">Swagger</a>. Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
