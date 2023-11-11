@@ -55,7 +55,7 @@ Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettin
 ```json
 "Environment": {
     "Start": "DEV"
- },
+},
 ```
 
 ### 4. Execute a aplicação
