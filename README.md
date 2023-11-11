@@ -29,7 +29,7 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
 ### Na nuvem ☁️
 Para testar a API, basta acessar o link do <a target="_blank" href="https://baldursgamestore.onrender.com">deploy</a> e começar a utilizar.
 
-
+<br>
 
 ### Localmente (utilizando Docker) :whale:
 
@@ -71,7 +71,7 @@ Outra opção é usar uma IDE .NET de sua preferência, como Visual Studio ou Je
 
 <br>
 
-A API está documentada no <a target="_blank" href="https://swagger.io/">Swagger</a>. Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
+A API está documentada no Swagger. Certifique-se de testar todas as operações CRUD para os recursos "Produto", "Categoria" e "Usuários", bem como os endpoints de busca por intervalo de preço e título ou console.
 
 <br>
 
