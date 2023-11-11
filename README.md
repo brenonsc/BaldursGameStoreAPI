@@ -39,7 +39,7 @@ Certo, se você já tem o Dockerfile criado e apenas precisa seguir com os passo
 
 ```bash
 git clone https://github.com/brenonsc/BaldursGameStoreAPI.git
-cd BaldursGame
+cd BaldursGameStoreAPI
 ```
 
 ### 2. Inicialize o contêiner do Docker
@@ -50,7 +50,7 @@ docker compose up
 
 ### 3. Configure o appsettings.json
 
-Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettings.json do projeto que está com a configuração "PROD", e deve ser alterada para "DEV", como representado abaixo:
+Certifique-se de alterar a variável "Environment":"Start" no arquivo `appsettings.json` do projeto (localizado dentro da pasta BaldursGame) que está com a configuração "PROD", devendo ser alterada para "DEV" para ser usado localmente, como representado abaixo:
 
 ```json
 "Environment": {
