@@ -32,7 +32,7 @@ Para fazer os testes de forma online e sem necessidade de configurações, basta
 <br>
 
 ### Localmente (utilizando Docker) :whale:
-Para configurar a aplicação para executar em ambiente local, siga o passo a passo abaixo:
+Para configurar a aplicação para executar em ambiente local, é necessário ter instalado o Docker e o .NET 7 SDK, e assim seguir o passo a passo abaixo:
 
 #### 1. Clone o Projeto
 
