@@ -13,7 +13,7 @@ Esta é a documentação para a API de uma loja de games que permite a manipula�
     <img align='center' height='50' width='70' title='.NET Core' alt='dotnet' src='https://github.com/devicons/devicon/blob/master/icons/dotnetcore/dotnetcore-original.svg' />
     <img align='center' height='50' width='50' title='Nuget' alt='nuget' src='https://github.com/devicons/devicon/blob/master/icons/nuget/nuget-original.svg' />
     <img align='center' height='62' width='72' title='Swagger' alt='swagger' src='https://github.com/bush1D3v/tsbank_api/assets/133554156/6739401f-d03b-47f8-b01f-88da2a9075d1' />
-    <img align='center' height='53' width='55' title='JsonWebToken' alt='jsonwebtoken' src='https://github.com/bush1D3v/solid_rest_api/assets/133554156/d23ffb9d-aedc-4d68-9209-7268d7f41ce6' /> &nbsp;
+    <img align='center' height='53' width='55' title='JsonWebToken' alt='jsonwebtoken' src='https://images.ctfassets.net/kbkgmx9upatd/6E4gdxqqmafg9Usjz9etTU/bc93ad8e3cea217c3de390239ff34c8c/jwt-hero.png' /> &nbsp;
     <img align='center' height='48' width='48' title='Bcrypt' alt='bcrypt' src='https://bcrypt.online/images/bcrypt-esse-tools-logo-square.svg' /> 
     <img align='center' height='50' width='65' title='PostgreSQL' alt='postgresql' src='https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg' />
     <img align='center' height='50' width='46' title='Microsoft SQL Server' alt='mssql' src='https://user-images.githubusercontent.com/15386828/118396465-5129c000-b658-11eb-8fa1-48f185431c82.png' /> &nbsp;
